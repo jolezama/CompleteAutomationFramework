@@ -18,4 +18,17 @@ public class SauceDemoTests extends BaseTest {
         LoginActions login = new LoginActions(DriverManager.getDriver());
         login.performLogin("standard_user", "secret_sauce");
     }
+
+    @Test(description = "LoginTest_sauceDemo_wrongPath")
+    public void sauceDemo_loginWrongPathTest() {
+        LoginActions login = new LoginActions(DriverManager.getDriver());
+        login.performLoginWrongPath("standard_user", "wrong_password");
+    }
+
+    @Test(description = "PurchaseTest_sauceDemo_addAllAndCheckout")
+    public void sauceDemo_purchaseFlowTest() {
+        LoginActions login = new LoginActions(DriverManager.getDriver());
+        login.performLogin("standard_user", "secret_sauce");
+        login.addAllItemsToCartAndStartCheckout();
+    }
 }
