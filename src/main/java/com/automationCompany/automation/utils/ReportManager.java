@@ -14,6 +14,10 @@ public class ReportManager {
         test.set(extentTest);
     }
 
+    public static ExtentTest getCurrentTest() {
+        return test.get();
+    }
+
     public static void startNode(String nodeName) {
         node.set(test.get().createNode(nodeName));
     }
@@ -48,6 +52,26 @@ public class ReportManager {
             );
         } else {
             step(message);
+        }
+    }
+
+
+    public static void fail(String message, boolean screenshot) {
+        if (screenshot) {
+            String path = ScreenshotUtil.takeScreenshot(
+                    DriverManager.getDriver(),
+                    "fail_" + System.currentTimeMillis()
+            );
+
+            getLogger().log(
+                    Status.FAIL,
+                    message,
+                    MediaEntityBuilder
+                            .createScreenCaptureFromPath(path)
+                            .build()
+            );
+        } else {
+            getLogger().log(Status.FAIL, message);
         }
     }
 
