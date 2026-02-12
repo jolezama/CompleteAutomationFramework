@@ -6,11 +6,16 @@
     </listeners>
 
 
-    <test name="All Tests">
-        <packages>
-            <package name="com.automationCompany.automation.tests"/>
-        </packages>
+    <test name="LoginTest - Heroku">
+      <classes>
+          <class name="com.automationCompany.automation.tests.heroku.HerokuTests" />
+      </classes>
     </test>
 
+    <test name="LoginTest - SauceDemo">
+        <classes>
+            <class name="com.automationCompany.automation.tests.heroku.HerokuTests" />
+        </classes>
+    </test>
 
 </suite>
