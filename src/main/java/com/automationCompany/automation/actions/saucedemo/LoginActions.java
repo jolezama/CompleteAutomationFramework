@@ -16,7 +16,7 @@ public class LoginActions extends BasePage {
 
     public void performLogin(String user, String pass) {
 
-        ReportManager.startNode("Validating Logging In Node");
+        ReportManager.startNode("Validating SauceDemo Login Node");
 
         ReportManager.step("Starting login process", true);
 
@@ -25,22 +25,12 @@ public class LoginActions extends BasePage {
         da.click(page.loginBtn);
 
         ValidationHelper.softAssertTrue(
-                da.isDisplayed(page.logoutBtn),
+                da.isDisplayed(page.productsTitle),
                 "User should be logged in successfully"
         );
 
-        ReportManager.step("Login process finished",true);
+        ReportManager.step("Login process finished", true);
 
         ReportManager.endNode();
     }
-    public void performLogin_WrongPath(String user, String pass){
-        ReportManager.startNode("Validating Login - Wrong Path");
-        ReportManager.step("Starting login process", true);
-        da.type(page.username, user);
-        da.type(page.password, pass);
-        da.click(page.loginBtn);
-
-    }
-
-
 }

@@ -8,6 +8,11 @@ import org.testng.annotations.Test;
 
 public class HerokuTests extends BaseTest {
 
+    @Override
+    protected String appKey() {
+        return "heroku";
+    }
+
     @Test(description = "LoginTest_happyPath")
     public void heroku_loginTest() {
         LoginActions login = new LoginActions(DriverManager.getDriver());

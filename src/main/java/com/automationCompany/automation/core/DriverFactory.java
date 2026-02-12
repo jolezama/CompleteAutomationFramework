@@ -19,8 +19,6 @@ public class DriverFactory {
         }
 
         driver.manage().window().maximize();
-        driver.get(ConfigManager.get("baseUrl"));
-
         return driver;
     }
 }
