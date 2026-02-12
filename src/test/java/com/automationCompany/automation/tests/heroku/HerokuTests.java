@@ -13,7 +13,7 @@ public class HerokuTests extends BaseTest {
         return "heroku";
     }
 
-    @Test(description = "LoginTest_happyPath")
+    @Test(description = "LoginTest_Heroku_HappyPath")
     public void heroku_loginTest() {
         LoginActions login = new LoginActions(DriverManager.getDriver());
         login.performLogin("tomsmith", "SuperSecretPassword!");
