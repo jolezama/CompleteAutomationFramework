@@ -1,20 +1,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="AutomationSuite">
+<suite name="AutomationSuite" parallel="tests" thread-count="2">
 
     <listeners>
         <listener class-name="com.automationCompany.automation.utils.TestListener"/>
     </listeners>
 
-
     <test name="LoginTest - Heroku">
-      <classes>
-          <class name="com.automationCompany.automation.tests.heroku.HerokuTests" />
-      </classes>
+        <classes>
+            <class name="com.automationCompany.automation.tests.heroku.HerokuTests"/>
+        </classes>
     </test>
 
     <test name="LoginTest - SauceDemo">
         <classes>
-            <class name="com.automationCompany.automation.tests.heroku.HerokuTests" />
+            <class name="com.automationCompany.automation.tests.saucedemo.SauceDemoTests"/>
         </classes>
     </test>
 

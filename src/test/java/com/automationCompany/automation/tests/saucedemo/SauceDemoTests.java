@@ -8,9 +8,14 @@ import org.testng.annotations.Test;
 
 public class SauceDemoTests extends BaseTest {
 
-    @Test(description = "LoginTest_WrongPath")
-    public void sauceDemo_loginTest_WrongPath() {
+    @Override
+    protected String appKey() {
+        return "saucedemo";
+    }
+
+    @Test(description = "LoginTest_sauceDemo_happyPath")
+    public void sauceDemo_loginTest() {
         LoginActions login = new LoginActions(DriverManager.getDriver());
-        login.performLogin("tomsmith", "SuperSecretPassword!");
+        login.performLogin("standard_user", "secret_sauce");
     }
 }
